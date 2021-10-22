@@ -1,0 +1,86 @@
+$breakpoints: (
+  mobile: 375px,
+  tablet: 768px,
+  desktop: 1024px,
+  wide: 1280px,
+);
+
+$breakpoints-shown: (mobile, tablet, desktop, wide);
+
+@use 'libs/mq' with (
+  $breakpoints: $breakpoints,
+  $show-breakpoints: $breakpoints-shown,
+);
+
+// USER VARIABLES SECTION
+
+$redColor: #f43939;
+$blueColor: #3897ff;
+$fontSize: 16px;
+$textColor: #21272e;
+$manropeFont: manrope, sans-serif;
+$systemFont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    font-display: swap; // Uncomment to initially display system fonts
+    src: url($furl) format("woff2");
+  }
+}
+
+@include font("manrope", normal, 500, "../fonts/Manropemedium.woff2");
+@include font("manrope", normal, 600, "../fonts/Manropesemibold.woff2");
+@include font("manrope", normal, 700, "../fonts/Manropebold.woff2");
+
+// GENERAL CSS SETTINGS
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+  font-family: $manropeFont;
+  font-size: $fontSize;
+  color: $textColor;
+  overflow-x: hidden;
+}
+
+.center {
+  text-align: center;
+}

@@ -1,0 +1,27 @@
+.partners {
+  &__wrapper {
+    padding-top: 124px;
+    padding-bottom: 114px;
+  }
+
+  &__section-subtitle {
+    margin-bottom: 58px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__item {
+    img {
+      filter: grayscale(1);
+      max-height: 98px;
+      object-fit: contain;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+}
+

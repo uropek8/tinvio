@@ -1,0 +1,72 @@
+@use '../libs/mq';
+
+// @include add-breakpoint(tvscreen, 1280px);
+
+.topper {
+  position: relative;
+  padding-top: 80px;
+  background-color: rgb(252, 253, 255);
+  background-image: url('/img/dist/Noise bg_blue.jpg');
+  background-size: cover;
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: 0 124px, 100% 120px;
+    background-image: url('/img/dist/Boxes.png'), url('/img/dist/Fruits.png');
+    background-size: 402px 555px, 327px 528px;
+    z-index: 0;
+
+    @include mq.mq($until: wide) {
+      background-position: -130px 124px, calc(100% + 60px) 120px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    padding-top: 115px;
+    padding-bottom: 223px;
+    z-index: 1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $redColor;
+    font-size: 13px;
+    line-height: 1.35;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  &__section-title {
+    max-width: 800px;
+    margin-bottom: 55px;
+  }
+
+  &__link {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px 45px 17px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: rgba(94, 22, 22, 0.47) 0px 14px 30px -8px;
+    background-image: linear-gradient(104deg, #ff474d, #fa4353);
+  }
+
+  &__text {
+    color: #909599;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}

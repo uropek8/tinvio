@@ -1,0 +1,73 @@
+.steps {
+  position: relative;
+  background-color: #fcfdff;
+  background-image: url("/img/dist/Noise bg_blue.jpg");
+  background-size: cover;
+
+  &__wrapper {
+    padding-top: 88px;
+    padding-bottom: 91px;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__section-subtitle {
+    line-height: 1.4;
+    margin-bottom: 87px;
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    position: relative;
+    flex: 1 0 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & + & {
+      margin-left: 8%;
+
+      &::before {
+        content: '';
+        width: 272px;
+        height: 2px;
+        position: absolute;
+        top: 28px;
+        right: calc(100% - 95px);
+        opacity: 0.2;
+        background-color: #21272E;
+      }
+    }
+
+    img {
+      width: 57px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__item-title {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  &__item-text {
+    color: #787c80;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+}

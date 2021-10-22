@@ -1,0 +1,13 @@
+.screenshot {
+  position: relative;
+  z-index: 3;
+
+  &__content {
+    margin-top: -91px;
+    
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
