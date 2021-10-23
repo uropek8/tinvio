@@ -1,11 +1,39 @@
+@use '../libs/mq';
+
 .partners {
+  &__sub-container {
+    @include mq.mq($until: wide) {
+      max-width: 100%;
+      padding: 0 44px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding: 0;
+    }
+  }
+
   &__wrapper {
     padding-top: 124px;
     padding-bottom: 114px;
+
+    @include mq.mq($until: desktop) {
+      padding-top: 100px;
+      padding-bottom: 107px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding-top: 31px;
+      padding-bottom: 66px;
+    }
   }
 
   &__section-subtitle {
     margin-bottom: 58px;
+
+    @include mq.mq($until: tablet) {
+      padding: 0 12px;
+      margin-bottom: 39px;
+    }
   }
 
   &__list {
@@ -21,6 +49,10 @@
       object-fit: contain;
       user-select: none;
       pointer-events: none;
+
+      @include mq.mq($until: desktop) {
+        max-height: 88px;
+      }
     }
   }
 }

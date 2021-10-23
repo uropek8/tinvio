@@ -1,0 +1,101 @@
+@use "../libs/mq";
+
+.footer {
+  background-color: $textColor;
+
+  &__wrapper {
+    padding-top: 48px;
+    padding-bottom: 47px;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include mq.mq($until: desktop) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__main-link {
+    @include mq.mq($until: desktop) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__copywrite-text {
+    position: absolute;
+    top: calc(100% + 23px);
+    left: 13px;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 11px;
+    font-weight: 500;
+
+    @include mq.mq($until: desktop) {
+      position: static;
+      margin-left: 10px;
+      margin-right: 24px;
+    }
+  }
+
+  &__main-nav {
+    margin-right: 24px;
+
+    @include mq.mq($until: desktop) {
+      max-width: calc(100% - 120px);
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__main-nav-item {
+    & + & {
+      margin-left: 16px;
+    }
+  }
+
+  &__main-nav-link {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-size: cover;
+
+    &.insta {
+      background-image: url("/img/dist/inst.svg");
+
+      &:hover {
+        background-image: url("/img/dist/inst-hover.svg");
+      }
+    }
+
+    &.linkedin {
+      background-image: url("/img/dist/linkedin.svg");
+
+      &:hover {
+        background-image: url("/img/dist/linkedin-hover.svg");
+      }
+    }
+  }
+
+  &__action {
+    display: flex;
+
+    @include mq.mq($until: desktop) {
+      margin-right: 0 !important;
+    }
+  }
+
+  &__action-link {
+    display: inline-block;
+
+    & + & {
+      margin-left: 16px;
+    }
+
+    img {
+      width: 129px;
+    }
+  }
+}

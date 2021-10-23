@@ -1,3 +1,5 @@
+@use '../libs/mq';
+
 .header {
   width: 100%;
   height: 80px;
@@ -12,8 +14,23 @@
     align-items: center;
   }
 
+  &__main-nav {
+    @include mq.mq($until: tablet) {
+      display: none;
+    }
+  }
+
   &__main-link {
     margin-right: 14px;
+
+    @include mq.mq($until: desktop) {
+      margin-left: 20px;
+    }
+
+    @include mq.mq($until: tablet) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   &__btn {
@@ -24,9 +41,33 @@
     border-radius: 6px;
     border: 1px solid rgba(144, 149, 153, 0.35);
     background-color: rgba(255, 255, 255, 0);
+
+    &_hidden-md {
+      @include mq.mq($until: tablet) {
+        display: none;
+      }
+    }
   }
 
   &__btn_right {
     margin-left: auto;
+
+    @include mq.mq($until: wide) {
+      margin-right: 32px;
+    }
+
+    @include mq.mq($until: tablet) {
+      margin-right: 0;
+    }
+  }
+
+  &__menu-btn {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-image: url('../img/dist/Menu.svg');
   }
 }

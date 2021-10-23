@@ -1,0 +1,447 @@
+@use "../libs/mq";
+
+.contacts {
+  position: relative;
+  background-image: linear-gradient(to top, #fafafc, rgba(255, 255, 255, 0.45));
+  z-index: 1;
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("/img/dist/Ovals-1.png");
+    background-repeat: no-repeat;
+    background-position: left -110px top 139px;
+    background-size: 719px, 197px;
+    z-index: 0;
+
+    @include mq.mq($until: desktop) {
+      background-position: left -130px top 55px;
+    }
+
+    @include mq.mq($until: tablet) {
+      display: none;
+    }
+
+    img {
+      width: 369px;
+      position: absolute;
+      left: 324px;
+      bottom: 0;
+
+      @include mq.mq($until: wide) {
+        width: 318px;
+      }
+
+      @include mq.mq($until: desktop) {
+        display: none;
+      }
+    }
+  }
+
+  &__overlay {
+    width: 62px;
+    height: 86px;
+    position: absolute;
+    right: 3%;
+    bottom: 46px;
+    background-image: url("/img/dist/Dots_CTA form_2.png");
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    z-index: 2;
+
+    @include mq.mq($until: desktop) {
+      width: 122px; // 244
+      height: 110px; // 220
+      right: 215px;
+      bottom: 51px;
+      background-image: url("/img/dist/Dots_CTA form.png");
+    }
+
+    @include mq.mq($until: tablet) {
+      bottom: 52px;
+      right: 10px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    padding-top: 223px;
+    padding-bottom: 91px;
+    z-index: 3;
+
+    @include mq.mq($until: wide) {
+      padding-top: 121px;
+      padding-bottom: 87px;
+    }
+
+    @include mq.mq($until: desktop) {
+      padding-top: 100px;
+      padding-bottom: 81px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding-top: 68px;
+      padding-bottom: 87px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+
+    @include mq.mq($until: tablet) {
+      padding: 0 4px;
+    }
+  }
+
+  &__desc {
+    flex: 1 0 494px;
+    max-width: 494px;
+
+    @include mq.mq($until: wide) {
+      flex: 1 0 400px;
+      max-width: 400px;
+    }
+
+    @include mq.mq($until: desktop) {
+      flex: 1 0 100%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__section-title {
+    line-height: 1.4;
+    margin-bottom: 150px;
+
+    br {
+      @include mq.mq($until: wide) {
+        display: none;
+      }
+    }
+
+    @include mq.mq($until: wide) {
+      margin-bottom: 131px;
+    }
+
+    @include mq.mq($until: desktop) {
+      text-align: center;
+    }
+  }
+
+  &__box {
+    position: relative;
+
+    @include mq.mq($until: desktop) {
+      margin-top: 102px;
+    }
+
+    @include mq.mq($until: tablet) {
+      margin-top: 129px;
+    }
+  }
+
+  &__box-badge {
+    position: absolute;
+    left: -52px;
+    bottom: calc(100% + 22px);
+    z-index: 4;
+
+    @include mq.mq($until: wide) {
+      left: -30px;
+    }
+
+    @include mq.mq($until: desktop) {
+      display: flex;
+      justify-content: center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include mq.mq($until: tablet) {
+      left: 0;
+      bottom: calc(100% + 25px);
+      transform: none;
+    }
+
+    img {
+      width: 110px;
+      position: absolute;
+      left: 50px;
+      bottom: 0;
+    }
+
+    span {
+      font-family: $handOfSeanFont;
+      font-size: 23px;
+      line-height: 1;
+      opacity: 0.9;
+      white-space: nowrap;
+
+      @include mq.mq($until: tablet) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__list {
+    width: 288px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 24px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.2);
+  }
+
+  &__item {
+    flex: 1 0 calc(50%);
+    max-width: calc(50%);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 11px;
+
+    &:nth-child(even) {
+      padding-left: 20px;
+    }
+
+    &:nth-child(-n + 2) {
+      margin-top: 0;
+    }
+  }
+
+  &__item-flag {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    background-image: url("../img/dist/sheet_apple_64.png");
+    background-size: 121.538px;
+
+    &.singapore {
+      background-position: -81.0256px -528px;
+    }
+
+    &.indonesia {
+      background-position: -60.7692px -365.538px;
+    }
+
+    &.australia {
+      background-position: 0px -893.538px;
+    }
+
+    &.taiwan {
+      background-position: -101.282px -101.538px;
+    }
+
+    &.hong-kong {
+      background-position: -40.5128px -528px;
+    }
+
+    &.thailand {
+      background-position: -81.0256px -954.462px;
+    }
+
+    &.india {
+      background-position: -40.5px -1807.5px;
+    }
+
+    &.vietnam {
+      background-position: -101.282px -385.846px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    width: 407px;
+    margin-top: 8px;
+    margin-left: 154px;
+    z-index: 2;
+
+    @include mq.mq($until: wide) {
+      margin-left: 129px;
+    }
+
+    &_desktop {
+      @include mq.mq($until: desktop) {
+        display: none;
+      }
+    }
+
+    &_tablet {
+      display: none;
+
+      @include mq.mq($until: desktop) {
+        display: block;
+        margin: 0 auto;
+      }
+
+      @include mq.mq($until: tablet) {
+        max-width: 407px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__card-content {
+    position: relative;
+    width: 100%;
+    padding: 32px;
+    border-radius: 13px;
+    box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 2;
+  }
+
+  &__card-overlay {
+    position: absolute;
+    inset: 0px -60px -36px 0px;
+    background-image: url("/img/dist/Dots_Carousel.png"), url("/img/dist/Dots_Carousel.png");
+    background-size: 98px 182px;
+    background-position: right top 60px, left 60% bottom;
+    background-repeat: no-repeat;
+    z-index: 0;
+
+    @include mq.mq($until: tablet) {
+      background-position: right top,left bottom 15px;
+    }
+  }
+
+  &__card-badge {
+    position: absolute;
+    left: 74px;
+    bottom: calc(100% + 35px);
+    z-index: 4;
+
+    @include mq.mq($until: desktop) {
+      display: flex;
+      justify-content: center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include mq.mq($until: tablet) {
+      left: auto;
+      right: 0;
+      bottom: calc(100% + 29px);
+      transform: none;
+    }
+
+    img {
+      width: 120px;
+      position: absolute;
+      left: -45px;
+      bottom: 2px;
+
+      // @include mq.mq($until: tablet) {
+      //   left: -25px;
+      // }
+    }
+
+    span {
+      font-family: $handOfSeanFont;
+      font-size: 23px;
+      line-height: 1;
+      opacity: 0.9;
+      white-space: nowrap;
+
+      @include mq.mq($until: tablet) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__card-title {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 49px;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__input-item {
+    width: 100%;
+    height: 56px;
+
+    & + & {
+      margin-top: 32px;
+    }
+
+    &_flex {
+      display: flex;
+
+      input {
+        max-width: 80px;
+
+        & + input {
+          max-width: 231px;
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    border-radius: 10px;
+    border: solid 1px rgba(144, 149, 153, 0.35);
+
+    @include mq.mq($until: tablet) {
+      font-size: 14px;
+    }
+
+    &::placeholder {
+      color: #b4babf;
+    }
+  }
+
+  &__form-action {
+    display: flex;
+    align-items: center;
+    margin-top: 39px;
+
+    @include mq.mq($until: tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__form-btn {
+    cursor: pointer;
+    width: 172px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    background-image: linear-gradient(107deg, #ff474d, #fa4353);
+
+    @include mq.mq($until: tablet) {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__topper-text {
+    margin-left: 34px;
+
+    @include mq.mq($until: tablet) {
+      margin-left: 0;
+    }
+  }
+}

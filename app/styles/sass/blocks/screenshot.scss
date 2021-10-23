@@ -1,13 +1,51 @@
+@use '../libs/mq';
+
 .screenshot {
   position: relative;
   z-index: 3;
 
   &__content {
+    position: relative;
     margin-top: -91px;
+
+    @include mq.mq($until: tablet) {
+      margin-top: -63px;
+      padding-bottom: 380px;
+    }
     
     img {
       display: block;
       margin: 0 auto;
+
+      &.wide {
+        @include mq.mq($until: wide) {
+          display: none;
+        }
+
+        @include mq.mq($until: desktop) {
+          display: block;
+        }
+
+        @include mq.mq($until: tablet) {
+          min-width: 650px;
+          max-width: 650px;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      &.desktop {
+        display: none;
+
+        @include mq.mq($until: wide) {
+          display: block;
+        }
+
+        @include mq.mq($until: desktop) {
+          display: none;
+        }
+      }
     }
   }
 }

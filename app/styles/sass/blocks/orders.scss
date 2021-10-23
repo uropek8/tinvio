@@ -1,13 +1,42 @@
+@use '../libs/mq';
+
 .orders {
   overflow: hidden;
 
+  &__container {
+    @include mq.mq($until: tablet) {
+      padding: 0;
+    }
+  }
+
   &__wrapper {
     padding-bottom: 131px;
+
+    @include mq.mq($until: desktop) {
+      padding-bottom: 61px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding-bottom: 67px;
+    }
   }
 
   &__content {
     width: 100%;
     display: flex;
+
+    @include mq.mq($until: wide) {
+      padding: 0 33px;
+    }
+
+    @include mq.mq($until: desktop) {
+      flex-direction: column-reverse;
+      padding: 0 28px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding: 0;
+    }
   }
 
   &__info {
@@ -16,14 +45,56 @@
     padding-top: 143px;
     // padding-bottom: 119px;
     padding-right: 75px;
+
+    @include mq.mq($until: wide) {
+      flex: 1 0 0;
+      max-width: none;
+    }
+
+    @include mq.mq($until: desktop) {
+      // flex: 1 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 58px;
+      padding-right: 0;
+    }
+
+    @include mq.mq($until: tablet) {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 40px;
+    }
+  }
+
+  &__info-desc {
+    margin-bottom: 80px;
+
+    @include mq.mq($until: desktop) {
+      max-width: 385px;
+      margin-bottom: 0;
+    }
+
+    @include mq.mq($until: tablet) {
+      max-width: 100%;
+      padding: 0 35px;
+    }
   }
 
   &__section-subtitle {
     margin-bottom: 24px;
+
+    @include mq.mq($until: tablet) {
+      text-align: center;
+      margin-bottom: 16px;
+    }
   }
 
   &__section-text {
-    margin-bottom: 80px;
+    @include mq.mq($until: tablet) {
+      text-align: center;
+    }
   }
 
   &__media {
@@ -31,6 +102,20 @@
     flex: 1 0 60%;
     max-width: 60%;
     height: 592px;
+
+    @include mq.mq($until: wide) {
+      flex: 1 0 414px;
+      max-width: 414px;
+    }
+
+    @include mq.mq($until: desktop) {
+      flex: 1 0 auto;
+      max-width: 100%;
+    }
+
+    @include mq.mq($until: tablet) {
+      height: 394px;
+    }
 
     &::after {
       content: '';
@@ -45,18 +130,35 @@
     }
 
     img {
-      min-width: 1084px;
-      max-height: 549px;
+      min-width: 1050px;
+      // max-height: 549px;
       position: absolute;
       top: 46px;
       left: -20px;
       z-index: 1;
+
+      @include mq.mq($until: tablet) {
+        min-width: 640px;
+        max-width: 640px;
+        left: 0;
+      }
     }
   }
 
   &__nav {
     display: flex;
     align-items: center;
+
+    @include mq.mq($until: desktop) {
+      align-self: flex-start;
+      margin-right: -28px;
+    }
+
+    @include mq.mq($until: tablet) {
+      align-self: center;
+      margin-right: 0;
+      margin-bottom: 35px;
+    }
   }
 
   &__nav-btn {

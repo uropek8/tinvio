@@ -1,3 +1,5 @@
+@use "../libs/mq";
+
 .experience {
   &__container {
     max-width: 1070px;
@@ -9,21 +11,89 @@
   &__wrapper {
     padding-top: 127px;
     padding-bottom: 122px;
+
+    @include mq.mq($until: wide) {
+      padding-bottom: 106px;
+    }
+
+    @include mq.mq($until: desktop) {
+      padding-top: 96px;
+      padding-bottom: 216px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding-top: 60px;
+      padding-bottom: 97px;
+    }
   }
 
   &__header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 78px;
+
+    @include mq.mq($until: desktop) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 101px;
+    }
+
+    @include mq.mq($until: tablet) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__section-subtitle {
+    @include mq.mq($until: wide) {
+      padding-left: 49px;
+    }
+
+    @include mq.mq($until: desktop) {
+      padding-left: 0;
+    }
+
+    @include mq.mq($until: tablet) {
+      text-align: center;
+    }
+
+    br {
+      @include mq.mq($until: desktop) {
+        display: none;
+      }
+    }
   }
 
   &__section-text {
     max-width: 455px;
     padding-top: 13px;
+
+    @include mq.mq($until: desktop) {
+      text-align: center;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding-top: 24px;
+    }
+  }
+
+  &__media {
+    @include mq.mq($until: wide) {
+      padding: 0 48px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding: 0;
+    }
   }
 
   &__list {
     display: flex;
+
+    @include mq.mq($until: desktop) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item {
@@ -35,10 +105,39 @@
     align-items: flex-end;
     justify-content: center;
     border-radius: 52px;
-    background-color: #E1EFF0;
+    background-color: #e1eff0;
+
+    @include mq.mq($until: wide) {
+      height: 464px;
+    }
+
+    @include mq.mq($until: desktop) {
+      flex: 1 0 auto;
+      width: 410px;
+      height: 718px;
+    }
+
+    @include mq.mq($until: tablet) {
+      width: 265px;
+      height: 464px;
+      border-radius: 47px;
+    }
 
     & + & {
       margin-left: 41px;
+
+      @include mq.mq($until: wide) {
+        margin-left: 47px;
+      }
+
+      @include mq.mq($until: desktop) {
+        margin-top: 96px;
+        margin-left: 0;
+      }
+
+      @include mq.mq($until: tablet) {
+        margin-top: 48px;
+      }
     }
   }
 
@@ -47,20 +146,62 @@
     top: 37px;
     right: 48px;
     z-index: 2;
+
+    @include mq.mq($until: wide) {
+      width: 248px;
+      right: 46px;
+    }
+
+    @include mq.mq($until: desktop) {
+      width: 398px;
+      top: 50px;
+      right: 62px;
+    }
+
+    @include mq.mq($until: tablet) {
+      width: 256px;
+      top: 40px;
+      right: 42px;
+    }
   }
 
   &__item-status {
+    position: relative;
     display: flex;
     align-items: center;
     font-size: 14px;
     opacity: 0.4;
     margin-bottom: 27px;
-    
+    z-index: 3;
+
+    @include mq.mq($until: wide) {
+      margin-bottom: 24px;
+    }
+
+    @include mq.mq($until: desktop) {
+      flex-direction: column;
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    @include mq.mq($until: tablet) {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
     svg {
       width: 18px;
       height: 18px;
       margin: 6px;
       opacity: 0.4;
+
+      @include mq.mq($until: desktop) {
+        transform: rotateZ(90deg);
+      }
+
+      @include mq.mq($until: tablet) {
+        margin: 3px;
+      }
     }
 
     img {

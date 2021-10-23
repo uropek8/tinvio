@@ -19,6 +19,7 @@ $blueColor: #3897ff;
 $fontSize: 16px;
 $textColor: #21272e;
 $manropeFont: manrope, sans-serif;
+$handOfSeanFont: hand-of-sean, sans-serif;
 $systemFont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 
 // FONTS LOAD SECTION
@@ -36,6 +37,7 @@ $systemFont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 @include font("manrope", normal, 500, "../fonts/Manropemedium.woff2");
 @include font("manrope", normal, 600, "../fonts/Manropesemibold.woff2");
 @include font("manrope", normal, 700, "../fonts/Manropebold.woff2");
+@include font("hand-of-sean", normal, 400, "../fonts/HandOfSeanRegular.woff2");
 
 // GENERAL CSS SETTINGS
 

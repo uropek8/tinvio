@@ -1,3 +1,5 @@
+@use '../libs/mq';
+
 .communication {
   position: relative;
   background-color: #fcfdff;
@@ -9,15 +11,45 @@
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
+
+    @include mq.mq($until: wide) {
+      max-width: 100%;
+      padding: 0 44px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding: 0 20px;
+    }
   }
 
   &__wrapper {
     padding-top: 96px;
     padding-bottom: 77px;
+
+    @include mq.mq($until: wide) {
+      padding-bottom: 82px;
+    }
+
+    @include mq.mq($until: desktop) {
+      padding-top: 64px;
+      padding-bottom: 100px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding-bottom: 60px;
+    }
   }
 
   &__content {
     display: flex;
+
+    @include mq.mq($until: wide) {
+      align-items: center;
+    }
+
+    @include mq.mq($until: desktop) {
+      flex-direction: column;
+    }
   }
 
   &__media {
@@ -25,18 +57,60 @@
     max-width: 100%;
     padding-right: 97px;
 
+    @include mq.mq($until: wide) {
+      padding-right: 88px;
+    }
+
     img {
       width: 624px;
       margin-left: -25px;
+
+      @include mq.mq($until: desktop) {
+        width: 514px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    &_desktop {
+      @include mq.mq($until: desktop) {
+        display: none;
+      }
+    }
+
+    &_tablet {
+      display: none;
+
+      @include mq.mq($until: desktop) {
+        display: block;
+        padding-right: 0;
+        margin-bottom: 50px;
+      }
     }
   }
 
   &__desc {
     max-width: 400px;
+
+    @include mq.mq($until: wide) {
+      max-width: 420px;
+    }
+
+    @include mq.mq($until: desktop) {
+      max-width: 100%;
+    }
   }
 
   &__section-subtitle {
     margin-bottom: 40px;
+
+    @include mq.mq($until: desktop) {
+      margin-bottom: 46px;
+    }
+
+    @include mq.mq($until: desktop) {
+      text-align: center;
+    }
   }
 
   &__action {
@@ -44,6 +118,16 @@
     display: flex;
     padding-bottom: 64px;
     margin-bottom: 56px;
+
+    @include mq.mq($until: desktop) {
+      justify-content: center;
+      padding-bottom: 90px;
+      margin-bottom: 0;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding-bottom: 65px;
+    }
 
     &::after {
       content: '';
@@ -54,6 +138,10 @@
       bottom: 0;
       opacity: 0.2;
       background-color: #21272E;
+
+      @include mq.mq($until: desktop) {
+        display: none;
+      }
     }
   }
 
@@ -81,6 +169,16 @@
   }
 
   &__section-text {
-    margin-bottom: 8px;
+    @include mq.mq($until: desktop) {
+      text-align: center;
+    }
+
+    & + & {
+      margin-top: 8px;
+
+      @include mq.mq($until: desktop) {
+        text-align: center;
+      }
+    }
   }
 }

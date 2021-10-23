@@ -9,6 +9,11 @@
   background-image: url('/img/dist/Noise bg_blue.jpg');
   background-size: cover;
 
+  @include mq.mq($until: tablet) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   &__overlay {
     width: 100%;
     height: 100%;
@@ -22,7 +27,18 @@
     z-index: 0;
 
     @include mq.mq($until: wide) {
-      background-position: -130px 124px, calc(100% + 60px) 120px;
+      background-position: -220px 124px, calc(100% + 150px) 105px;
+    }
+
+    @include mq.mq($until: desktop) {
+      background-position: -255px 124px, calc(100% + 185px) 105px;
+    }
+
+    @include mq.mq($until: tablet) {
+      position: relative;
+      min-height: 555px;
+      background-position: -155px bottom, calc(100% + 175px) bottom;
+      margin-bottom: 127px;
     }
   }
 
@@ -31,6 +47,15 @@
     padding-top: 115px;
     padding-bottom: 223px;
     z-index: 1;
+
+    @include mq.mq($until: desktop) {
+      padding-bottom: 159px;
+    }
+
+    @include mq.mq($until: tablet) {
+      padding-top: 39px;
+      padding-bottom: 72px;
+    }
   }
 
   &__content {
@@ -51,6 +76,14 @@
   &__section-title {
     max-width: 800px;
     margin-bottom: 55px;
+
+    @include mq.mq($until: wide) {
+      max-width: 750px;
+    }
+
+    @include mq.mq($until: tablet) {
+      margin-bottom: 48px;
+    }
   }
 
   &__link {
