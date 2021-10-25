@@ -16,11 +16,19 @@
     @include mq.mq($until: desktop) {
       flex-wrap: wrap;
     }
+
+    @include mq.mq($until: tablet) {
+      flex-direction: column;
+    }
   }
 
   &__main-link {
     @include mq.mq($until: desktop) {
       margin-bottom: 24px;
+    }
+
+    @include mq.mq($until: tablet) {
+      margin-bottom: 40px;
     }
   }
 
@@ -31,11 +39,21 @@
     color: rgba(255, 255, 255, 0.25);
     font-size: 11px;
     font-weight: 500;
+    white-space: nowrap;
 
     @include mq.mq($until: desktop) {
       position: static;
       margin-left: 10px;
       margin-right: 24px;
+    }
+
+    @include mq.mq($until: tablet) {
+      position: absolute;
+      top: calc(100% + 16px);
+      left: 50%;
+      margin-left: 0;
+      margin-right: 0;
+      transform: translateX(-50%);
     }
   }
 
@@ -48,11 +66,25 @@
       margin-right: 0;
       margin-bottom: 24px;
     }
+
+    @include mq.mq($until: tablet) {
+      margin-bottom: 40px;
+    }
+
+    ul {
+      @include mq.mq($until: tablet) {
+        flex-direction: column;
+      }
+    }
   }
 
   &__main-nav-item {
     & + & {
       margin-left: 16px;
+
+      @include mq.mq($until: tablet) {
+        margin-top: 0;
+      }
     }
   }
 
@@ -84,6 +116,10 @@
 
     @include mq.mq($until: desktop) {
       margin-right: 0 !important;
+    }
+
+    @include mq.mq($until: tablet) {
+      margin: 40px 0 0 !important;
     }
   }
 

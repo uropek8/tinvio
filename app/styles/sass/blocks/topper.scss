@@ -14,39 +14,39 @@
     flex-direction: column-reverse;
   }
 
-  &__overlay {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-repeat: no-repeat;
-    background-position: 0 124px, 100% 120px;
-    background-image: url('/img/dist/Boxes.png'), url('/img/dist/Fruits.png');
-    background-size: 402px 555px, 327px 528px;
-    z-index: 0;
+  // &__overlay {
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   background-repeat: no-repeat;
+  //   background-position: 0 124px, 100% 120px;
+  //   background-image: url('/img/dist/Boxes.png'), url('/img/dist/Fruits.png');
+  //   background-size: 402px 555px, 327px 528px;
+  //   z-index: 2;
 
-    @include mq.mq($until: wide) {
-      background-position: -220px 124px, calc(100% + 150px) 105px;
-    }
+  //   @include mq.mq($until: wide) {
+  //     background-position: -220px 124px, calc(100% + 150px) 105px;
+  //   }
 
-    @include mq.mq($until: desktop) {
-      background-position: -255px 124px, calc(100% + 185px) 105px;
-    }
+  //   @include mq.mq($until: desktop) {
+  //     background-position: -255px 124px, calc(100% + 185px) 105px;
+  //   }
 
-    @include mq.mq($until: tablet) {
-      position: relative;
-      min-height: 555px;
-      background-position: -155px bottom, calc(100% + 175px) bottom;
-      margin-bottom: 127px;
-    }
-  }
+  //   @include mq.mq($until: tablet) {
+  //     position: relative;
+  //     min-height: 555px;
+  //     background-position: -155px bottom, calc(100% + 175px) bottom;
+  //     margin-bottom: 127px;
+  //   }
+  // }
 
   &__wrapper {
     position: relative;
     padding-top: 115px;
     padding-bottom: 223px;
-    z-index: 1;
+    z-index: 3;
 
     @include mq.mq($until: desktop) {
       padding-bottom: 159px;
@@ -54,7 +54,7 @@
 
     @include mq.mq($until: tablet) {
       padding-top: 39px;
-      padding-bottom: 72px;
+      padding-bottom: 744px; // 72
     }
   }
 

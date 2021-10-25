@@ -62,6 +62,7 @@
   }
 
   &__menu-btn {
+    display: none;
     cursor: pointer;
     width: 24px;
     height: 24px;
@@ -69,5 +70,9 @@
     border: none;
     background-color: transparent;
     background-image: url('../img/dist/Menu.svg');
+
+    @include mq.mq($until: tablet) {
+      display: inline-block;
+    }
   }
 }

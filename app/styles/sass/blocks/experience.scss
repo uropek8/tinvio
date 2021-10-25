@@ -1,6 +1,9 @@
 @use "../libs/mq";
 
 .experience {
+  position: relative;
+  z-index: 2;
+
   &__container {
     max-width: 1070px;
     width: 100%;
@@ -11,6 +14,7 @@
   &__wrapper {
     padding-top: 127px;
     padding-bottom: 122px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
 
     @include mq.mq($until: wide) {
       padding-bottom: 106px;
@@ -19,6 +23,7 @@
     @include mq.mq($until: desktop) {
       padding-top: 96px;
       padding-bottom: 216px;
+      background-image: none;
     }
 
     @include mq.mq($until: tablet) {
@@ -30,17 +35,19 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 78px;
+    padding-bottom: 78px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
 
     @include mq.mq($until: desktop) {
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      margin-bottom: 101px;
+      padding-bottom: 101px;
+      background-image: none;
     }
 
     @include mq.mq($until: tablet) {
-      margin-bottom: 60px;
+      padding-bottom: 60px;
     }
   }
 
@@ -78,8 +85,14 @@
   }
 
   &__media {
+    background-color: #fff;
+
     @include mq.mq($until: wide) {
       padding: 0 48px;
+    }
+
+    @include mq.mq($until: desktop) {
+      background-color: transparent;
     }
 
     @include mq.mq($until: tablet) {

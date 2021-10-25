@@ -1,6 +1,9 @@
 @use '../libs/mq';
 
 .partners {
+  position: relative;
+  z-index: 2;
+  
   &__sub-container {
     @include mq.mq($until: wide) {
       max-width: 100%;
@@ -40,9 +43,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mq.mq($until: tablet) {
+      overflow-x: scroll;
+    }
   }
 
   &__item {
+    @include mq.mq($until: tablet) {
+      min-width: 124px;
+    }
+
     img {
       filter: grayscale(1);
       max-height: 98px;

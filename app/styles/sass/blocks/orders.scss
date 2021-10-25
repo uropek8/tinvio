@@ -1,7 +1,9 @@
 @use '../libs/mq';
 
 .orders {
+  position: relative;
   overflow: hidden;
+  z-index: 2;
 
   &__container {
     @include mq.mq($until: tablet) {
@@ -11,6 +13,20 @@
 
   &__wrapper {
     padding-bottom: 131px;
+    
+    &::after {
+      content: '';
+      width: 100%;
+      height: 122px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+
+      @include mq.mq($until: desktop) {
+        height: 61px;
+      }
+    } 
 
     @include mq.mq($until: desktop) {
       padding-bottom: 61px;
@@ -126,7 +142,7 @@
       left: 0;
       border-radius: 53px 0 0 53px;
       background-color: #FCEDE8;
-      z-index: 0;
+      z-index: 2;
     }
 
     img {
@@ -135,7 +151,7 @@
       position: absolute;
       top: 46px;
       left: -20px;
-      z-index: 1;
+      z-index: 3;
 
       @include mq.mq($until: tablet) {
         min-width: 640px;

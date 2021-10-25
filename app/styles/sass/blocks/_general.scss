@@ -1,4 +1,4 @@
-@use '../libs/mq';
+@use "../libs/mq";
 
 .container {
   max-width: 1180px;
@@ -17,6 +17,48 @@
 
   @include mq.mq($until: tablet) {
     padding: 0 24px;
+  }
+}
+
+.main {
+  position: relative;
+}
+
+.overlay-deco {
+  width: 1520px;
+  margin: 0px auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 50%;
+  // background-image: url("/img/dist/Boxes.png"), url("/img/dist/Fruits.png");
+  // background-size: 402px 555px, 327px 528px;
+  background-image: url("/img/dist/Boxes.png"), url("/img/dist/Fruits.png"),
+    url("/img/dist/Lines-0.png"), url("/img/dist/Lines-1.png"), url("/img/dist/Lines-2.png"),
+    url("/img/dist/Lines-3.png"), url("/img/dist/Ovals-1.png");
+  background-position: 0 124px, 100% 124px, 708px 7px, 341px 804px, 452px 2925px, 454px 4454px,
+    40px 4525px;
+  background-size: 402px 555px, 327px 528px, 598px 787px, 958px 1516px, 698px 1434px, 369px 759px,
+    719px 725px; // 1438px 1450px
+  // background-position: 668px 7px, 301px 804px, 412px 2925px;
+  // background-size: 598px 787px, 958px 1516px, 698px 1434px;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  @include mq.mq($until: wide) {
+    background-position: 25px 124px, 92% 124px, 836px 7px, 476px 1159px, 580px 2892px, 590px 4380px,
+      130px 4280px;
+  }
+
+  @include mq.mq($until: desktop) {
+    background-position: 125px 124px, 83% 124px, 105% 7px, 105% 804px, 52% 3180px, 60% 90%, 30% 95%;
+  }
+
+  @include mq.mq($until: tablet) {
+    background-image: url("/img/dist/Boxes.png"), url("/img/dist/Fruits.png");
+    background-position: 34% 516px, 63% 590px;
+    background-size: 402px 555px, 327px 528px;
   }
 }
 
@@ -75,6 +117,10 @@
     align-items: center;
     padding-left: 24px;
 
+    @include mq.mq($until: tablet) {
+      padding-left: 0;
+    }
+
     &.white {
       &::before {
         background-color: #fff;
@@ -91,12 +137,21 @@
       transform: translateY(-50%);
       opacity: 0.2;
       background-color: $textColor;
+
+      @include mq.mq($until: tablet) {
+        display: none;
+      }
     }
   }
 
   &__item {
     & + & {
       margin-left: 24px;
+
+      @include mq.mq($until: tablet) {
+        margin-top: 24px;
+        margin-left: 0;
+      }
     }
   }
 
